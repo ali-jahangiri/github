@@ -2,12 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const userGithubSlice = createSlice({
   name: "userGithub",
-  initialState: {
-    id: "",
-  },
+  initialState: {},
   reducers: {
     setUserGithub: (state, action) => {
-      state.id = action.payload;
+      state = action.payload;
     },
     removeUserGithub: (state, action) => {
       state = {

@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 
 // slices
 import AuthSlice from "./AuthSlice";
+import UiSlice from "./UiSlice";
 import userGithubSlice from "./userGithubSlice";
 
 const persistConfig = {
@@ -15,6 +16,7 @@ const persistConfig = {
 const RootReducer = combineReducers({
   auth: AuthSlice,
   userGithub: userGithubSlice,
+  ui: UiSlice,
 });
 
 export default persistReducer(persistConfig, RootReducer);
