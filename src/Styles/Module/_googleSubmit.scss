@@ -1,0 +1,16 @@
+.google__submit {
+    color: gray !important;
+    border-radius: 7px;
+    box-shadow: 0px 9px 30px -16px #a3a3a3 !important;
+    transition: 0.3s !important;
+    transform: translateY(20px);
+    border: 2px solid rgba(0, 0, 0, 0.425) !important;
+    border-radius: 5px !important;
+    font-family: 'Recursive' !important;
+
+    &:active {
+        transform: translateY(15px);
+        color: black !important;
+        border-color: black !important;
+    }
+}
