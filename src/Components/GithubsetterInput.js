@@ -5,27 +5,26 @@ import { useDispatch } from "react-redux";
 import debounce from "../Utils/debounce";
 
 import { setGithubModal } from "../Store/UiSlice";
-import { setUserGithub } from "../Store/userGithubSlice";
+import { getUserGithubInfo, setUserGithub } from "../Store/userGithubSlice";
 
 const GithubInputSetter = () => {
   const [value, setValue] = useState("");
   const [userImag, setUserImag] = useState("");
   const dispatch = useDispatch();
 
-  const submitHandler = () => {
-    dispatch(setGithubModal(false));
-    dispatch(setUserGithub(value));
-    setValue("");
-  };
-  const searchUserImage = debounce(() => {
-    axios.get(`https://api.github.com/users/${value.trim()}`).then((data) => {
-      console.log(data);
-    });
-  }, 1000);
+  // const searchUserImage = debounce(() => {
+  //   axios.get(`https://api.github.com/users/${value.trim()}`).then((data) => {
+  //     console.log(data);
+  //   });
+  // }, 1000);
 
   const onChangeHandler = ({ target: { value } }) => {
     setValue(value.trim());
-    // (() => searchUserImage())();
+  };
+  const submitHandler = () => {
+    dispatch(setGithubModal(false));
+    dispatch(getUserGithubInfo(value));
+    setValue("");
   };
   return (
     <>
